@@ -1,0 +1,121 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/company/main.css' %}" />
+{% endblock css%}
+{% block title %} About | Park Coast Capital Partners {% endblock title %}
+
+
+{% block content %}
+<!-- HERO CONTAINER -->
+{% if company_content.about_banner %}
+<div class="container-fluid p-0" id="hero-banner-container"
+  style="background-image: url({{company_content.about_banner.url}});">
+  {% endif %}
+  <div class="overlay-bg d-flex align-items-center justify-content-center">
+
+    <h1 class="text-white">{{company_content.banner_title}}</h1>
+  </div>
+</div>
+
+<!-- ABOUT US CONTAINER -->
+<div class="container-fluid bg-light">
+  <div class="container py-5" id="about-us-container">
+    <h2 class="text-center">{{company_section_one.title}}</h2>
+
+    <div class="text-justify content-section">
+      {{company_section_one.title_description|safe}}
+    </div>
+  </div>
+</div>
+
+<!-- WHY CONTAINER -->
+<div class="container-fluid py-5 my-0" id="why-container">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-lg-6 text-center text-lg-start order-2 order-lg-1">
+        {% if company_section_two.image %}
+        <img class="img-fluid about-img" src="{{company_section_two.image.url}}" alt="about-img">
+        {% endif %}
+      </div>
+
+      <div class="col-12 col-lg-6 d-flex flex-column align-items-start justify-content-center order-1 order-lg-2">
+        <h2>{{company_section_two.heading}}</h2>
+
+        <p>
+          {{company_section_two.heading_description|safe}}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 3 CONTAINER -->
+<div class="container-fluid my-0 py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center">{{company_section_three.title}}</h2>
+
+    <div class="content-section">{{company_section_three.title_description|safe}}</div>
+  </div>
+</div>
+
+<!-- SECTION 4 CONTAINER -->
+<div class="container-fluid py-5 my-0" id="image-section-container">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-lg-6 d-flex flex-column align-items-start justify-content-center">
+        <h2>{{company_section_four.title}}
+        </h2>
+
+        <div>
+          {{company_section_four.title_description|safe}}
+        </div>
+      </div>
+
+      <div class="col-12 col-lg-6 text-center text-lg-end">
+        {% if company_section_four.image %}
+        <img class="img-fluid about-img ms-auto" src="{{company_section_four.image.url}}" alt="about-img">
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- LAST SECTION CONTAINER -->
+<div class="container-fluid mb-5 py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center">{{company_section_five.title}}</h2>
+
+    <div class="text-center content-section">{{company_section_five.title_description|safe}}</div>
+  </div>
+</div>
+
+<!-- START NEWSLETTER CONTAINER -->
+<div class="container-fluid px-0 px-sm-2 px-md-3 py-3 py-sm-4 py-md-5 px-0" id="newsletter-container">
+  <div class="container p-0" id="newsletter-wrapper">
+    <div class="row justify-content-center mx-auto">
+      <div class="col-12 mb-3 text-center">
+        <h4 class="text-white">{{ home_page_content.newsletter_title }}</h4>
+
+        <div class=" newsletter-description text-white mb-0 mx-auto">
+          {{ home_page_content.newsletter_description }}
+        </div>
+      </div>
+
+      <div class="col-12 col-md-8 col-lg-6 form-input-box">
+        <form class="d-flex align-items-center flex-md-nowrap gap-2" method="post" id="newsletter-form">
+          {% csrf_token %}
+          {{form.email}}
+          <button type="submit" id="newsletter-submit-btn">Submit</button>
+        </form>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- NEWSLETTER CONTAINER  END-->
+
+{% endblock content %}
+{% block js %}
+<script src="{% static 'js/common/newsletter.js' %}"></script>
+{% endblock js %}

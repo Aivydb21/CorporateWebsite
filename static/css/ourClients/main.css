@@ -1,0 +1,41 @@
+@import url(/static/css/common/howItWorks.css);
+
+#hero-banner-container {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 400px;
+  margin-top: 97px;
+}
+
+.content-section div,
+.content-section p {
+  text-align: justify;
+}
+
+.grid-img {
+  min-height: 300px;
+  height: auto;
+  max-width: 100%;
+  max-height: 500px;
+  overflow: hidden;
+}
+
+.grid-img > img {
+  height: 100%;
+  width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  #hero-banner-container {
+    height: 300px;
+    margin-top: 81px;
+  }
+
+  .grid-img {
+    height: auto;
+    min-height: auto;
+    max-width: 100%;
+    max-height: 400px;
+  }
+}

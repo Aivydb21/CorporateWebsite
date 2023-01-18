@@ -1,0 +1,126 @@
+@import url(/static/css/common/colors.css);
+
+#hero-banner-container {
+  height: 400px;
+  margin-top: 97px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* WHY CONTAINER STYLING STARTS */
+#why-container {
+  background: url(/static/assets/why-bg.jpg) no-repeat;
+  background-position: -1500px center;
+}
+
+#why-container h2,
+#why-container p {
+  color: white;
+}
+
+.about-img {
+  max-width: 80%;
+  border-radius: 25px;
+  box-shadow: 0 0 10px;
+}
+/* WHY CONTAINER STYLING ENDS */
+
+/* SECTION 4 STYLING STARTS */
+#image-section-container {
+  background: url(/static/assets/why-bg.jpg) no-repeat;
+  background-position: 1010px center;
+}
+
+#image-section-container h2,
+#image-section-container p {
+  color: white;
+}
+
+.content-section {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.content-section p {
+  margin-bottom: 0;
+}
+
+/* SECTION 4 STYLING END */
+
+@media screen and (max-width: 991px) {
+  #why-container {
+    background-position: center;
+  }
+
+  #image-section-container {
+    background-position: center;
+  }
+
+  .about-img {
+    max-width: 100%;
+    box-shadow: none;
+    max-height: 500px;
+  }
+}
+
+@media screen and (min-width: 991px) and (max-width: 1200px) {
+  #why-container {
+    background-position: -1640px center;
+  }
+
+  #image-section-container {
+    background-position: 780px center;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  #why-container {
+    background-position: -1500px center;
+  }
+
+  #image-section-container {
+    background-position: 1080px center;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  #why-container {
+    background-position: -1400px center;
+  }
+
+  #image-section-container {
+    background-position: 1200px center;
+  }
+}
+
+@media screen and (min-width: 1800px) {
+  #why-container {
+    background: none;
+  }
+
+  #image-section-container {
+    background: none;
+  }
+}
+
+@media screen and (min-width: 991px) {
+  #why-container h2,
+  #why-container p {
+    color: black;
+  }
+
+  #image-section-container h2,
+  #image-section-container p {
+    color: black;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #hero-banner-container {
+    height: 300px;
+    margin-top: 81px;
+  }
+}

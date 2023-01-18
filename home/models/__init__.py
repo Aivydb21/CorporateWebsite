@@ -1,0 +1,6 @@
+from .homepageslider_model import HomePageSlider
+from .homepagecontent_model import HomePageContent
+from .homepagehistory_model import HomePageHistory
+from .homevaluesandmission_model import HomePageValueAndMissions
+from .homefooter_model import Footer
+from .homepagenewsletter_model import HomePageNewsLetter
