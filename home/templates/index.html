@@ -1,0 +1,201 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/pages/home/main.css' %}" />
+{% endblock css%}
+
+{% block title %} Park Coast Capital Partners {% endblock title %}
+
+{% block content %}
+<!-- HERO CONTAINER -->
+<div id="hero_container" class="container-fluid px-0">
+  <div class="heroSwiperSlider overlay-bg">
+    <!-- SWIPER WRAPPER -->
+    <div class="swiper-wrapper">
+      {% for slider in home_page_slider %}
+      {% if slider.slider_image %}
+      <div class="swiper-slide" style="background-image: url({{slider.slider_image.url}});">
+        {% endif %}
+        <div class="overlay-bg d-flex align-items-center justify-content-center py-5 py-sm-3 py-md-3 py-lg-0">
+          <div class="slider-content container">
+            <div class="col-12 d-flex flex-column align-items-center">
+              <h1 class="text-white text-center">{{slider.title}}</h1>
+
+              <div class="text-white mb-2 text-center">{{slider.description|safe}}</div>
+              <a href="{% url 'our-client' %}">
+                <button class="hero-section-btn">Learn More</button>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      {% endfor %}
+    </div>
+
+    <!-- SWIPER PAGINATION & BUTTONS -->
+    <div class="swiper-utils-wrapper position-absolute">
+      <div class="swiper-button-prev heroSwiper"></div>
+      <div class="swiper-pagination heroSwiper"></div>
+      <div class="swiper-button-next heroSwiper"></div>
+    </div>
+  </div>
+</div>
+<!-- OUR FIRM CONTAINER -->
+<div class="container py-5" id="history-container">
+  <div class="row align-items-center">
+    <div class="col-12 col-md">
+      <h2 class="mb-2"><span class="text-gradient"> {{home_page_history.title}}</span></h2>
+
+      <p class="text-muted">
+        {{home_page_history.description|safe}}
+      </p>
+
+      <a href="{% url 'about' %}" class="text-muted d-flex align-items-center gap-2 text-decoration-none"><i
+          class="fa-solid fa-caret-right"></i>Explore
+        More</a>
+    </div>
+
+    <div class="col-12 col-md d-flex justify-content-center">
+      <div class="about-img d-flex align-items-center justify-content-center">
+        {% if home_page_history.image %}
+        <img class="img-fluid" src="{{home_page_history.image.url}}" alt="history_infographics" />
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MISSION + VALUES CONTAINER -->
+<div class="container-fluid py-5 py-lg-3" id="mission-values-container">
+  <div class="container swiperMissionValuesContainer position-relative overflow-hidden pb-5 py-lg-5 px-0">
+    <div class="swiper-wrapper">
+      {% for mission_content in home_page_values_and_mission %}
+      <div class="swiper-slide mission-swiper-slide">
+        <div class="row">
+          <div class="col-12 col-lg order-2 order-lg-1">
+            <div class="mission-val-img d-flex align-items-center justify-content-center">
+              {% if mission_content.image %}
+              <img src="{{mission_content.image.url}}" alt="slide-img" />
+              {% endif %}
+            </div>
+          </div>
+
+          <div class="col-12 col-lg order-1 order-lg-2 d-flex flex-column justify-content-center">
+            <h2>{{mission_content.title}}</h2>
+
+            <div class="mission-description">
+              {{mission_content.description|safe}}
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <div class="mission-button-prev">
+      <i class="fa-solid fa-arrow-left"></i>
+    </div>
+
+    <div class="mission-button-next">
+      <i class="fa-solid fa-arrow-right"></i>
+    </div>
+
+    <div class="swiper-pagination missionSwiper"></div>
+  </div>
+</div>
+
+<!-- SERVICES CONTAINER -->
+<!-- <div class="container my-5 mb-sm-0" id="services-container">
+  <div class="servicesSwiperContainer position-relative overflow-hidden px-3 mb-0 mb-sm-5">
+    <h2>
+      <span class="text-gradient">{{ home_page_content.services_title }}</span>
+    </h2>
+
+    <div class="swiper-wrapper py-3">
+      {% for services_content in home_page_services %}
+      <div class="swiper-slide">
+        <div class="card servicesSwiper pointer">
+          <div class="card-img">
+            {% if services_content.image %}
+            <img class="img-fluid" src="{{services_content.image.url}}" alt="service-card-img" />
+            {% endif %}
+          </div>
+
+          <div class="card-body">
+            <h6>{{services_content.title}}</h6>
+
+            <div class="services-card-description text-muted">
+              {{services_content.description|safe}}
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+
+    <div class="services-slider-utils">
+      <div class="services-button-prev servicesSwiper">
+        <i class="fa-solid fa-arrow-left"></i>
+      </div>
+
+      <div class="services-button-next servicesSwiper">
+        <i class="fa-solid fa-arrow-right"></i>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<!-- HOW IT WORKS CONTAINER -->
+<div class="container my-5" id="how-it-works-container">
+  <h2 class="text-center mb-4">
+    <span class="text-gradient">{{client_banner.how_it_work_title}}</span>
+  </h2>
+
+  <div class="row justify-content-center mx-0 row-gap-2 row-gap-sm-3">
+    {% for content in client_how_it_work %}
+    <div class="col-card col-6 col-sm-4 col-lg-3 px-1 px-md-2">
+      <div class="box-card">
+        {% if content.icon %}
+        <img class="img-box" src="{{content.icon.url}}" alt="">
+        {% endif %}
+
+        <p class="text-center fw-600">{{content.text}}</p>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+<!-- START NEWSLETTER CONTAINER -->
+<div class="container-fluid px-0 px-sm-2 px-md-3 py-3 py-sm-4 py-md-5 px-0" id="newsletter-container">
+  <div class="container p-0" id="newsletter-wrapper">
+    <div class="row justify-content-center mx-auto">
+      <div class="col-12 mb-3 text-center">
+        <h4 class="text-white">{{ home_page_content.newsletter_title }}</h4>
+
+        <div class=" newsletter-description text-white mb-0 mx-auto">
+          {{ home_page_content.newsletter_description }}
+        </div>
+      </div>
+
+      <div class="col-12 col-md-8 col-lg-6 form-input-box">
+        <form class="d-flex align-items-center flex-md-nowrap gap-2" method="post" id="newsletter-form">
+          {% csrf_token %}
+          {{form.email}}
+          <button type="submit" id="newsletter-submit-btn">Submit</button>
+        </form>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- NEWSLETTER CONTAINER  END-->
+
+{% endblock content %}
+
+{% block js %}
+<script src="{% static 'js/home/main.js' %}"></script>
+<script src="{% static 'js/common/newsletter.js' %}"></script>
+{% endblock js %}

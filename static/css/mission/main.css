@@ -1,0 +1,32 @@
+#hero-banner-container {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 400px;
+  margin-top: 97px;
+}
+
+#mission-content-container .img-box {
+  height: 100%;
+  max-height: 510px;
+  overflow: hidden;
+}
+
+#mission-content-container p {
+  margin-bottom: 0;
+}
+
+#content-col p {
+  text-align: justify;
+}
+
+#main-mission-title-box {
+  background: #eaf3fd;
+}
+
+@media screen and (max-width: 768px) {
+  #hero-banner-container {
+    height: 300px;
+    margin-top: 81px;
+  }
+}

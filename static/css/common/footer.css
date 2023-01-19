@@ -1,0 +1,49 @@
+@import url(./colors.css);
+
+#footer-container .logo-img {
+  width: 120px;
+}
+
+.footer-company-info {
+  text-align: justify;
+}
+
+#footer-container .title {
+  color: var(--primary);
+  opacity: 1;
+  font-weight: 600;
+}
+
+#footer-container .list-items a:hover {
+  opacity: 1;
+}
+
+#footer-container .list-items {
+  gap: 1rem;
+}
+
+#footer-container .list-items p, #footer-container .list-items .list-item-icon {
+  margin-bottom: 0;
+}
+
+#footer-container .list-items .link:hover::before {
+  content: ">";
+}
+
+.list-items > .list-item-icon:hover > i {
+  color: var(--secondary);
+}
+
+.list-item-icon a:hover {
+  border-bottom: none;
+}
+
+.bottom-footer {
+  background-color: var(--primary);
+}
+
+@media screen and (max-width: 991px) {
+  .footer-company-info {
+    text-align: center;
+  }
+}

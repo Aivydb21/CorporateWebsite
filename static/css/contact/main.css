@@ -1,0 +1,76 @@
+@import url(/static/css/common/colors.css);
+
+#hero-container {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 400px;
+  margin-top: 97px;
+}
+
+.contact-form-box {
+  /* padding: 20px; */
+  box-shadow: 0px 0px 10px rgb(205, 205, 205);
+  border-radius: 20px;
+}
+
+.contact-form-box .form-row {
+  width: 100%;
+}
+
+.contact-form-box .form-field {
+  padding: 10px;
+}
+
+.contact-form-box .form-field:focus {
+  padding: 10px;
+  box-shadow: 0px 0px 5px var(--secondary);
+  border: 1px solid var(--secondary);
+}
+
+.submit-btn {
+  width: 100%;
+  border: none;
+  background: var(--secondary);
+  color: white;
+  padding: 10px 20px;
+}
+
+.flag-icon {
+  width: 20px;
+  height: 20px;
+  background: white url(https://flagcdn.com/ax.svg) no-repeat center;
+  background-size: contain;
+}
+
+#country-select-input > button.dropdown-toggle::after {
+  /* content: ""; */
+  display: none;
+  /* border: none; */
+}
+
+#country-select-input .btn-label {
+  font-size: 14px;
+}
+
+#country-list {
+  width: 100%;
+  height: auto;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.item {
+  cursor: pointer;
+}
+
+.item .item-label {
+  font-size: 14px;
+}
+
+@media screen and (max-width: 768px) {
+  #hero-container {
+    height: 300px;
+    margin-top: 81px;
+  }
+}

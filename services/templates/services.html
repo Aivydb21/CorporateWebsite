@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/services/main.css' %}" />
+{% endblock css%}
+{% block title %} Services | Park Coast Capital Partners {% endblock title %}
+
+
+{% block content %}
+
+<!-- HERO CONTAINER -->
+{% if services_banner.banner_image %}
+<div class="container-fluid p-0" id="hero-container"
+  style="background-image: url({{services_banner.banner_image.url}});">
+  {% endif %}
+  <div class="overlay-bg d-flex align-items-center justify-content-center">
+    <h1 class="text-white">{{services_banner.title}}</h1>
+  </div>
+</div>
+
+<!-- SERVICES CONTAINER WRAPPER -->
+<div class="container-fluid mb-5 py-5 bg-light" id="services-container">
+  <div class="container">
+    <h2 class="text-center">{{services_paragraph.title}}</h2>
+
+    <div class="text-justify">
+      {{services_paragraph.description|safe}}
+    </div>
+  </div>
+</div>
+
+<!-- HOW IT WORKS CONTAINER -->
+<div class="container my-5" id="how-it-works-container">
+  <div class="row justify-content-center mx-0 row-gap-2 row-gap-sm-3">
+    {% for content in home_how_it_works %}
+    <div class="col-card col-6 col-sm-4 col-lg-3 px-1 px-md-2">
+      <div class="box-card">
+        {% if content.icon %}
+        <img class="img-box" src="{{content.icon.url}}" alt="">
+        {% endif %}
+
+        <p class="text-center fw-600">{{content.text}}</p>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+
+<!-- START NEWSLETTER CONTAINER -->
+<div class="container-fluid px-0 px-sm-2 px-md-3 py-3 py-sm-4 py-md-5 px-0" id="newsletter-container">
+  <div class="container p-0" id="newsletter-wrapper">
+    <div class="row justify-content-center mx-auto">
+      <div class="col-12 mb-3 text-center">
+        <h4 class="text-white">{{ home_page_content.newsletter_title }}</h4>
+
+        <div class=" newsletter-description text-white mb-0 mx-auto">
+          {{ home_page_content.newsletter_description }}
+        </div>
+      </div>
+
+      <div class="col-12 col-md-8 col-lg-6 form-input-box">
+        <form class="d-flex align-items-center flex-md-nowrap gap-2" method="post" id="newsletter-form">
+          {% csrf_token %}
+          {{form.email}}
+          <button type="submit" id="newsletter-submit-btn">Submit</button>
+        </form>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- NEWSLETTER CONTAINER  END-->
+
+{% endblock content %}
+{% block js %}
+<script src="{% static 'js/services/main.js' %}"></script>
+<script src="{% static 'js/common/newsletter.js' %}"></script>
+{% endblock js %}

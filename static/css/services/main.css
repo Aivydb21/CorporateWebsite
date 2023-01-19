@@ -1,0 +1,16 @@
+@import url(/static/css/common/howItWorks.css);
+
+#hero-container {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 400px;
+  margin-top: 97px;
+}
+
+@media screen and (max-width: 768px) {
+  #hero-container {
+    height: 300px;
+    margin-top: 81px;
+  }
+}

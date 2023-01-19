@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/contact/main.css' %}" />
+{% endblock css%}
+{% block title %} Contact Us | Park Coast Capital Partners {% endblock title %}
+
+
+{% block content %}
+<!-- HERO SECTION Start -->
+{% if contact_banner.banner %}
+<div class="container-fluid px-0" id="hero-container" style="background-image: url({{contact_banner.banner.url}});">
+  {% endif %}
+  <div class="overlay-bg d-flex align-items-center justify-content-center">
+    <h1 class="text-white">
+      {{contact_banner.title}}
+    </h1>
+  </div>
+</div>
+<!-- HERO SECTION End -->
+<!-- CONTACT-US CONTAINER SECTION -->
+<div class="container py-0 py-md-5 my-5" id="contact-container">
+  <div class="row">
+    <div class="col-12 col-md-6 pe-5 mb-5 mb-md-0 d-flex flex-column align-items-start justify-content-center">
+      <h2><span class="text-gradient">{{contact.contact_us_title}}</span>
+      </h2>
+
+      <h5 class="text-muted my-3">
+        {{contact.contact_us_description|safe}}
+      </h5>
+
+      <div class="info-items d-flex flex-column align-items-start gap-3 py-3">
+        <div class="item d-flex align-items-center gap-3">
+          <i class="fa-solid fa-envelope"></i>
+
+          <p class="mb-0">{{home_page_footer.email}}</p>
+        </div>
+
+        <div class="item d-flex align-items-center gap-3">
+          <i class="fa-solid fa-location-dot"></i>
+
+          <p class="mb-0">
+            {{ home_page_footer.office_address }}
+          </p>
+        </div>
+
+        <div class="item d-flex align-items-center gap-3">
+          <i class="fa-solid fa-phone"></i>
+
+          <p class="mb-0">{{ home_page_footer.phone_no }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-6 px-3 px-lg-5">
+      <div class="contact-form-box p-4" id="contact-form-container">
+        <h3 class="text-center mt-1 mb-4">Get In touch with us</h3>
+
+        <form action="" method="POST" class="d-flex align-items-start flex-column gap-4" id="contact-form">
+          {% csrf_token %}
+          <div class="form-row">
+            <input name="first_name" placeholder="First Name" type="text" class="form-control form-field" />
+          </div>
+
+          <div class="form-row">
+            <input name="last_name" placeholder="Last Name" type="text" class="form-control form-field" />
+          </div>
+
+          <div class="form-row">
+            <input name="email" placeholder="Your Work Email" type="email"
+              class="form-control form-field" />
+          </div>
+
+          <div class="form-row d-flex align-items-center gap-2">
+            <div class="col">
+              <select id="country-select-input" name="country" class="form-control form-field">
+                <option value="select" selected disabled>Select Country</option>
+              </select>
+            </div>
+
+            <div class="col">
+              <div class="form-row">
+                <input name="phone_number" placeholder="Phone" type="number" class="form-control form-field" />
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <input name="query_type" placeholder="Type of Query" type="text" class="form-control form-field" />
+          </div>
+
+          <div class="form-row">
+            <textarea name="message" placeholder="Write your message..." rows="5"
+              class="form-control form-field"></textarea>
+          </div>
+
+          <div class="form-row">
+            <button type="submit" class="submit-btn">Submit</button>
+          </div>
+        </form>
+
+        <!-- <div class="alert alert-success my-3">
+          subscribe
+        </div> -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT-US CONTAINER SECTION END -->
+
+{% endblock %}
+{% block js %}
+<script src="{% static 'js/contact/main.js' %}"></script>
+{% endblock js %}
