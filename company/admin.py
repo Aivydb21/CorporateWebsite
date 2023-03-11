@@ -73,3 +73,4 @@ class CompanyPageAdmin(admin.ModelAdmin):
         })
         return super().render_change_form(request, context, add, change, form_url, obj)
 admin.site.register(CompanyPage,CompanyPageAdmin)    
+ 
