@@ -38,7 +38,7 @@
 
 ## About The Project
 
-![Screen Shot](https://parkcoastholdings.com/media/home/logo/logo_3.png)
+![Screen Shot](https://parkcoastholdings.com/media/home/logo/logo.png)
 
 The purpose of this project is to design and develop a new corporate website for Park Coast Capital Partners. The website will be used to showcase the company's services, provide information about the company, and serve as a platform for interacting with company owners. Park Coast Capital Partners seeks to acquire a small business in the United States. The website's purpose is to educate potential sellers about our company, gather contact information, and provide contact details.
 
