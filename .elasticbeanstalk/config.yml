@@ -1,0 +1,31 @@
+branch-defaults:
+  default:
+    environment: null
+    group_suffix: null
+  feature/Update:
+    environment: CorporateWebsite-dev
+    group_suffix: null
+environment-defaults:
+  parkcoastpartners:
+    branch: null
+    repository: null
+  parkcoastsite-env:
+    branch: null
+    repository: null
+  venv:
+    branch: null
+    repository: null
+global:
+  application_name: parkcoast
+  branch: ec3e4608
+  default_ec2_keyname: parkkey
+  default_platform: Python 3.7 running on 64bit Amazon Linux 2
+  default_region: us-east-1
+  include_git_submodules: true
+  instance_profile: null
+  platform_name: null
+  platform_version: null
+  profile: eb-cli
+  repository: CorporateWebsite
+  sc: git
+  workspace_type: Application
